@@ -1,0 +1,38 @@
+name = "student-results-backend"
+main = "src/index.js"
+compatibility_date = "2024-01-15"
+node_compat = true
+
+[vars]
+ENVIRONMENT = "production"
+
+# Database D1 binding
+[[d1_databases]]
+binding = "DB"
+database_name = "student-results-db"
+database_id = "your-database-id"
+
+# KV for caching
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+
+# R2 for file storage
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "student-files"
+
+[build]
+command = "npm run build"
+
+# Routes configuration
+[[routes]]
+pattern = "api.yourdomain.com/*"
+zone_name = "yourdomain.com"
+
+# Environment-specific settings
+[env.production]
+name = "student-results-backend"
+
+[env.staging]
+name = "student-results-backend-staging"

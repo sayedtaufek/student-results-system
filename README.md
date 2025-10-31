@@ -1,2 +1,1 @@
-# nitaga
-موقع النتيجة 
+# Here are your Instructions
